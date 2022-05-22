@@ -1,0 +1,13 @@
+.banner {
+    background-image: url(../../../../assets/images/banner2.jpg);
+    object-fit: scale-down;
+    background-repeat: no-repeat;
+}
+
+/* 
+@media only screen and (min-width: 425px) {
+    .banner {
+        width: cover;
+        height: 600px;
+    }
+} */
