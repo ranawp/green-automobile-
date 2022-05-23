@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "name": "Break-light",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+    },
+    {
+        "_id": 2,
+        "name": "Car window",
+        "price": "100",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "Door",
+        "price": "150",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "Headlight",
+        "price": "180",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "Hubcap",
+        "price": "100",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "Mirror",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "minimumOrder": "100",
+        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+    }
+]
