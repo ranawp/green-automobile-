@@ -14,7 +14,7 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
-        <li>{user ? <Link onClick={logout} to='/logout'>LogOut</Link> : <Link to='/login'>Login</Link>}</li>
+        <li>{user ? <Link onClick={logout} to='/'>LogOut</Link> : <Link to='/login'>Login</Link>}</li>
         {/* <li><Link to='#products'>Products</Link></li> */}
 
 

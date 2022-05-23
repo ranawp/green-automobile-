@@ -4,6 +4,7 @@ import Blog from './Components/Pages/Blog/Blog';
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Login/Register';
+import RequireAuth from './Components/Pages/Login/RequireAuth';
 import SignUp from './Components/Pages/Login/SignUp';
 import Purchase from './Components/Pages/Purchase/Purchase';
 import Navbar from './Components/Shared/Navbar/Navbar';
@@ -18,7 +19,11 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/purchase/:purchaseId' element={<Purchase></Purchase>}></Route>
+        <Route path='/purchase/:purchaseId' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>
+        }></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
