@@ -14,6 +14,9 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
         <li>{user ? <Link onClick={logout} to='/'>LogOut</Link> : <Link to='/login'>Login</Link>}</li>
         {/* <li><Link to='#products'>Products</Link></li> */}
 
@@ -21,8 +24,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-primary text-white">
-            <div className="navbar-start">
+        <div className="navbar bg-primary ">
+            <div className="navbar">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -31,14 +34,19 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Green Automobile</a>
+                <a className="btn btn-ghost normal-case text-xl text-white">Green Automobile</a>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal p-0 text-white">
                     {menuItems}
                 </ul>
             </div>
-
+            <div className="navbar-end">
+                <label tabindex="1" for="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+            </div>
         </div>
     );
 };

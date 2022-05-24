@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
@@ -7,7 +7,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-
     const [signInWithGoogle, googleuser, googleloading, googleerror] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -22,6 +21,12 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    useEffect(() => {
+        if (googleuser || gmailuser) {
+            navigate(from, { replace: true })
+        }
+    }, [googleuser, gmailuser, location, from])
+
     if (googleloading || gmailloading) {
         return <Loading></Loading>
     }
@@ -30,9 +35,7 @@ const Login = () => {
         signInerror = <small className='text-red-500'>{gmailerror?.message || googleerror.message}</small>
     }
 
-    if (googleuser || gmailuser) {
-        navigate(from, { replace: true })
-    }
+
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
@@ -44,7 +47,7 @@ const Login = () => {
         <div className='flex mt-3 mb-3 justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <h2 className="text-center text-2xl font-bold text-primary">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
