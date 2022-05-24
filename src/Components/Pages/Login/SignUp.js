@@ -17,7 +17,7 @@ const SignUp = () => {
         signUpuser,
         signUploading,
         signUperror,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     let signInerror;
 
