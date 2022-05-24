@@ -20,7 +20,7 @@ import NotFound from './Components/Shared/NotFound/NotFound';
 function App() {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
