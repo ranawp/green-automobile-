@@ -87,11 +87,11 @@ const HomeProductreview = () => {
                                     <div className='grid justify-items-center text-center '>
                                         <div class="avatar">
                                             <div class="w-24 rounded">
-                                                <img src={user.clientImg} alt="" /> <br />
+                                                <img src={user.img} alt="" /> <br />
                                             </div>
                                         </div>
 
-                                        Name:{user.clientName} <br />
+                                        Name:{user.name} <br />
                                         {user.massage} <br />
                                         <p className='mb-8'>Rattings: {user.rattings}</p>
                                     </div>
