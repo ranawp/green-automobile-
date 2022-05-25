@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AddReview = () => {
+
     return (
         <div className='mt-5 p-6 w-full'>
             <h3 className='text-center text-primary font-bold text-2xl'>Add review </h3>

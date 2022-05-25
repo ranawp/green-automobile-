@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import useProduct from '../../Shared/Hooks/UseProduct';
 
-const ManageAllORder = () => {
+const ManageAllProducts = () => {
     const [product, setProduct] = useProduct()
     const [user, loading, error] = useAuthState(auth);
 
@@ -75,4 +75,4 @@ const ManageAllORder = () => {
     );
 };
 
-export default ManageAllORder;
+export default ManageAllProducts;

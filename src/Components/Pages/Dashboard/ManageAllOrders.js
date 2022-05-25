@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
-const Myorders = () => {
+const ManageAllOrders = () => {
     const [bookings, setBookings] = useState([]);
     const [user] = useAuthState(auth)
     useEffect(() => {
@@ -12,6 +12,7 @@ const Myorders = () => {
                 .then(data => setBookings(data))
         }
     }, [user])
+
     return (
         <div>
             <h5 className='text-2xl text-primary font-bold'> My orders</h5>
@@ -36,7 +37,11 @@ const Myorders = () => {
                                 <td ><img className='w-14' src={booking.img} alt="" /></td>
                                 <td>{booking.productName} </td>
                                 <td>{booking.price}</td>
-                                <td><input type="submit" value='Cancel' className='text-white btn btn-active btn-primary w-full max-w-xs' /></td>
+                                <td><select class="select select-bordered  max-w-xs">
+                                    <option disabled selected>Unpaid</option>
+                                    <option>paid</option>
+                                    <option>pending</option>
+                                </select></td>
                             </tr>)
 
                         }
@@ -52,4 +57,4 @@ const Myorders = () => {
     );
 };
 
-export default Myorders;
+export default ManageAllOrders;

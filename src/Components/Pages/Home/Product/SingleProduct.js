@@ -19,7 +19,7 @@ const SingleProduct = ({ product }) => {
                     <p>{description}</p>
                     <p>Minimum-order-Quantity:{minimumOrder}</p>
                     <div className="card-actions justify-start">
-                        <button onClick={() => handlePurchase(_id)} className="btn btn-primary">Purchase</button>
+                        <button onClick={() => handlePurchase(_id)} className="btn btn-primary">Book Now</button>
 
                     </div>
                 </div>

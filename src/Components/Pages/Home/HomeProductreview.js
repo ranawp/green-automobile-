@@ -68,8 +68,8 @@ const HomeProductreview = () => {
                         navigation
                         pagination={{ clickable: true }}
 
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
                     >
 
                         {
@@ -79,7 +79,7 @@ const HomeProductreview = () => {
                                     <div className='grid justify-items-center text-center '>
                                         <div class="avatar">
                                             <div class="w-24 rounded">
-                                                <img src={user.img} alt="" /> <br />
+                                                <img src='' alt="" /> <br />
                                             </div>
                                         </div>
 

@@ -12,7 +12,7 @@ const MyProfile = () => {
             <h3 className='mb-6 text-primary font-bold text-2xl'>Update Your Profile </h3>
             <div className=''>
 
-                <small>Name:</small><br /><input type="text" placeholder="Your Name" class="input input-bordered w-full max-w-xs" /> <br />
+                <small>Name:</small><br /><input type="text" placeholder="Your Name" value={user.displayName} class="input input-bordered w-full max-w-xs" /> <br />
                 <small>Email:</small> <br />
                 <input type="email" value={user.email} disabled placeholder=" your email" class="input input-bordered w-full max-w-xs" /> <br />
 

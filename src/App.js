@@ -6,7 +6,8 @@ import AddProduct from './Components/Pages/Dashboard/AddProduct';
 import AddReview from './Components/Pages/Dashboard/AddReview';
 import AllUsers from './Components/Pages/Dashboard/AllUsers';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import ManageAllORder from './Components/Pages/Dashboard/ManageAllORder';
+import ManageAllOrders from './Components/Pages/Dashboard/ManageAllOrders';
+import ManageAllProducts from './Components/Pages/Dashboard/ManageAllProducts';
 import Myorders from './Components/Pages/Dashboard/Myorders';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import WelcomeDashboard from './Components/Pages/Dashboard/WelcomeDashboard';
@@ -50,7 +51,8 @@ function App() {
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='alluser' element={<AllUsers></AllUsers>}></Route>
-          <Route path='allorders' element={<ManageAllORder></ManageAllORder>}></Route>
+          <Route path='manageAllproducts' element={<ManageAllProducts></ManageAllProducts>}></Route>
+          <Route path='manageAllOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
         </Route>
 
 

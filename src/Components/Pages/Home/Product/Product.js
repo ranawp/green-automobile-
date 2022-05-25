@@ -10,9 +10,6 @@ const Product = () => {
             .then(data => setProduct(data))
     })
 
-
-
-
     return (
         <div id='products'>
             <h3 className='text-center'>Products</h3>
