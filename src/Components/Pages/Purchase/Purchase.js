@@ -105,6 +105,7 @@ const Purchase = () => {
 
 
                         <form onSubmit={handleSubmit} action="">
+
                             <small>User Name:</small> <br />
                             <input name='userName' disabled value={user.displayName} placeholder='name' type="text" class="input input-bordered w-full max-w-xs" /> <br />
 

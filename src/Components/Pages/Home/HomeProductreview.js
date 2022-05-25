@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,51 +9,59 @@ import 'swiper/css/scrollbar';
 
 
 const HomeProductreview = () => {
-    const data = [
-        {
-            id: 1,
-            userName: 'Rana',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
+    // const data = [
+    //     {
+    //         id: 1,
+    //         userName: 'Rana',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
 
-        {
-            id: 2,
-            userName: 'Hridoy',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
-        {
-            id: 3,
-            userName: 'Partha',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
-        {
-            id: 4,
-            userName: 'Pankaj',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
-        {
-            id: 5,
-            userName: 'Dipen',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
-        {
-            id: 6,
-            userName: 'Arnab',
-            testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-            rattings: '4/5',
-            img: "https://api.lorem.space/image/face?hash=92048"
-        },
-    ]
+    //     {
+    //         id: 2,
+    //         userName: 'Hridoy',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
+    //     {
+    //         id: 3,
+    //         userName: 'Partha',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
+    //     {
+    //         id: 4,
+    //         userName: 'Pankaj',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
+    //     {
+    //         id: 5,
+    //         userName: 'Dipen',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
+    //     {
+    //         id: 6,
+    //         userName: 'Arnab',
+    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
+    //         rattings: '4/5',
+    //         img: "https://api.lorem.space/image/face?hash=92048"
+    //     },
+    // ]
+    const [review, setReview] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReview(data))
+    }, [])
+
     return (
         <div className='mt-20'>
 
@@ -73,18 +81,18 @@ const HomeProductreview = () => {
                     >
 
                         {
-                            data.map(user =>
+                            review.map(user =>
 
                                 <SwiperSlide>
                                     <div className='grid justify-items-center text-center '>
                                         <div class="avatar">
                                             <div class="w-24 rounded">
-                                                <img src='' alt="" /> <br />
+                                                <img src={user.clientImg} alt="" /> <br />
                                             </div>
                                         </div>
 
-                                        Name:{user.userName} <br />
-                                        {user.testimonial} <br />
+                                        Name:{user.clientName} <br />
+                                        {user.massage} <br />
                                         <p className='mb-8'>Rattings: {user.rattings}</p>
                                     </div>
                                 </SwiperSlide>
