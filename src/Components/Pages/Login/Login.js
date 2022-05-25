@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
@@ -7,8 +7,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+    const emailRef = useRef('');
     const [signInWithGoogle, googleuser, googleloading, googleerror] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+
     const [
         signInWithEmailAndPassword,
         gmailuser,
@@ -37,9 +40,12 @@ const Login = () => {
 
 
 
+
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
+        // console.log(data.email, data.password)
     };
+
 
 
 
@@ -55,7 +61,7 @@ const Login = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             {/*input email started */}
-                            <input type="email"
+                            <input ref={emailRef} type="email"
                                 placeholder="Your Email"
                                 className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
@@ -106,6 +112,9 @@ const Login = () => {
                         <input type="submit" value='Login' className='text-white btn btn-active btn-primary w-full max-w-xs' />
                     </form>
                     <p>New to green Motors? <small><Link className='text-primary' to='/signup'>Create New Account</Link></small> </p>
+                    <p>Forget Passowrd? <span className='text-primary'
+
+                    >Reset Password</span></p>
 
 
                     <div className="divider">OR</div>
@@ -115,17 +124,6 @@ const Login = () => {
                 </div>
             </div>
         </div>
-        // <form>
-        //     <h2 className='text-center'>Please login</h2>
-        //     <div onSubmit={handleSubmit} className='text-center'>
-        //         <input ref={emailRef} type="email" placeholder="Email" className="my-2 input input-bordered w-full max-w-xs" />
-        //         <br />
-
-        //         <input ref={passwordRef} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" /> <br />
-        //         <button className="btn btn-primary my-2 text-white">Success</button>
-
-        //     </div>
-        // </form>
 
 
     );

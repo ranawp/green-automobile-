@@ -8,7 +8,7 @@ import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import WelcomeDashboard from './Components/Pages/Dashboard/WelcomeDashboard';
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
-import Register from './Components/Pages/Login/Register';
+
 import RequireAuth from './Components/Pages/Login/RequireAuth';
 import SignUp from './Components/Pages/Login/SignUp';
 import Purchase from './Components/Pages/Purchase/Purchase';
@@ -26,7 +26,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/register' element={<Register></Register>}></Route>
+
 
         <Route path='/purchase/:purchaseId' element={
           <RequireAuth>
