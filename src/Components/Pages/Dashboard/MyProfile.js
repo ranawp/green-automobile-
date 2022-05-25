@@ -9,7 +9,7 @@ const MyProfile = () => {
 
     return (
         <div className='mt-5 p-6 w-full'>
-            <h3 className='text-center text-primary font-bold text-2xl'>My Profile </h3>
+            <h3 className='mb-6 text-primary font-bold text-2xl'>Update Your Profile </h3>
             <div className=''>
 
                 <small>Name:</small><br /><input type="text" placeholder="Your Name" class="input input-bordered w-full max-w-xs" /> <br />

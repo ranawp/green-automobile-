@@ -1,8 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './Components/Pages/About';
 import Blog from './Components/Pages/Blog/Blog';
+import AddProduct from './Components/Pages/Dashboard/AddProduct';
 import AddReview from './Components/Pages/Dashboard/AddReview';
+import AllUsers from './Components/Pages/Dashboard/AllUsers';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import ManageAllORder from './Components/Pages/Dashboard/ManageAllORder';
 import Myorders from './Components/Pages/Dashboard/Myorders';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import WelcomeDashboard from './Components/Pages/Dashboard/WelcomeDashboard';
@@ -26,6 +30,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
 
 
         <Route path='/purchase/:purchaseId' element={
@@ -43,7 +48,11 @@ function App() {
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myorders' element={<Myorders></Myorders>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='alluser' element={<AllUsers></AllUsers>}></Route>
+          <Route path='allorders' element={<ManageAllORder></ManageAllORder>}></Route>
         </Route>
+
 
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

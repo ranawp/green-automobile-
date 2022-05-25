@@ -24,7 +24,7 @@ const Purchase = () => {
     return (
         <div className=''>
 
-            <h2 className='text-center text-primary text-2xl mt-3'>Please provide valid Infomatrion</h2>
+            <h2 className='text-center text-primary text-2xl mt-3'>Purchase Product</h2>
             <div className='flex mt-3 mb-3 justify-center items-center p-5 '>
                 <div class="card lg:card-side bg-base-100 shadow-xl">
                     <figure><img className='p-2' src={product.img} alt="Movie" /></figure>
@@ -41,7 +41,7 @@ const Purchase = () => {
                         <small>  Address:</small>
                         <input type="text" placeholder="address" class="input input-bordered w-full max-w-xs" />
                         <small> Product Quantity:</small>
-                        <input type="text" placeholder="quantity" class="input input-bordered w-full max-w-xs" />
+                        <input type="number" placeholder="quantity" class="input input-bordered w-full max-w-xs" />
                         <div class="card-actions justify-start">
                             <button class="btn btn-primary">Payment</button>
                         </div>
