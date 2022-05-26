@@ -5,11 +5,24 @@ import auth from '../../../firebase.init';
 const Myorders = () => {
     const [bookings, setBookings] = useState([]);
     const [user] = useAuthState(auth)
+    // console.log(user)
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?user=${user.email}`)
-                .then(res => res.json())
-                .then(data => setBookings(data))
+
+            fetch(`http://localhost:5000/bookings?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accesToken')}`
+                }
+            }, [user])
+                .then(res => {
+                    // console.log('res', res);
+                    return res.json()
+                })
+                .then(data => {
+
+                    setBookings(data)
+                })
         }
     }, [user])
     return (

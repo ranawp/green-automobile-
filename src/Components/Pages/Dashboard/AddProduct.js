@@ -42,37 +42,8 @@ const AddProduct = () => {
                 }
 
             })
-        // console.log(data)
-        // const url = `http://localhost:5000/product`
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result)
-        //     })
-    };
-    // const onSubmit = data => { 
 
-    //     console.log(data)
-    //     const url = `http://localhost:5000/product`
-    //     fetch(url, {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result)
-    //         })
-    // };
-    // const imageStoragekey=`3cf84befed9b9bcd8f1d01c2b4412701`
+    };
 
     return (
         <div className=''>
@@ -80,8 +51,6 @@ const AddProduct = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <small>Product Name: <br /></small><input class="input input-bordered w-full max-w-xs" placeholder='Product Name'  {...register("name", { required: true, maxLength: 20 })} /> <br />
-
-                {/* <small>Product Image: <br /></small><input class="input input-bordered w-full max-w-xs" placeholder='Input Image URL'  {...register("img", { required: true })} /> <br /> */}
 
                 <small>Product Description:</small><br /><textarea class="input input-bordered w-full max-w-xs" placeholder='Product Description'  {...register("description")} /> <br />
 

@@ -9,55 +9,15 @@ import 'swiper/css/scrollbar';
 
 
 const HomeProductreview = () => {
-    // const data = [
-    //     {
-    //         id: 1,
-    //         userName: 'Rana',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-
-    //     {
-    //         id: 2,
-    //         userName: 'Hridoy',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-    //     {
-    //         id: 3,
-    //         userName: 'Partha',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-    //     {
-    //         id: 4,
-    //         userName: 'Pankaj',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-    //     {
-    //         id: 5,
-    //         userName: 'Dipen',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-    //     {
-    //         id: 6,
-    //         userName: 'Arnab',
-    //         testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, sit.',
-    //         rattings: '4/5',
-    //         img: "https://api.lorem.space/image/face?hash=92048"
-    //     },
-    // ]
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('http://localhost:5000/reviews', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accesToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
@@ -75,11 +35,7 @@ const HomeProductreview = () => {
                         slidesPerView={1}
                         navigation
                         pagination={{ clickable: true }}
-
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
                     >
-
                         {
                             review.map(user =>
 
@@ -96,9 +52,6 @@ const HomeProductreview = () => {
                                         <p className='mb-8'>Rattings: {user.rattings}</p>
                                     </div>
                                 </SwiperSlide>
-
-
-
                             )
                         }
                     </Swiper>

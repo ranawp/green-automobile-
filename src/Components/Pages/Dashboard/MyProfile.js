@@ -6,7 +6,6 @@ import auth from '../../../firebase.init';
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
 
-
     return (
         <div className='mt-5 p-6 w-full'>
             <h3 className='mb-6 text-primary font-bold text-2xl'>Update Your Profile </h3>
@@ -24,8 +23,6 @@ const MyProfile = () => {
 
 
                 <input type="submit" value='SUBMIT' className='mt-2 text-white btn btn-active btn-primary  max-w-xs' />
-
-
             </div>
         </div>
     );

@@ -49,6 +49,7 @@ function App() {
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='myorders' element={<Myorders></Myorders>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='alluser' element={<AllUsers></AllUsers>}></Route>
           <Route path='manageAllproducts' element={<ManageAllProducts></ManageAllProducts>}></Route>
