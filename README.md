@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 * Live website link: https://assignment-12-dbe1a.web.app/
-* project name: Auto motive
+* project name: Green Automotive
 * server side code link: https://github.com/programming-hero-web-course1/manufacturer-website-server-side-ranawp
 
 * client side : https://github.com/programming-hero-web-course1/manufacturer-website-client-side-ranawp 
