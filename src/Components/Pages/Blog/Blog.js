@@ -7,17 +7,12 @@ const Blog = () => {
             <article>
                 <h4 className='text-center font-bold text-4xl text-primary mt-10'>Blogs</h4>
                 <h2 className='mt-10 text-secondary font-bold text-2xl'>How will you improve the performance of a React Application?</h2>
-                <p>Performence optimizing in areat application
-                    Optimizing application performance is important for developers who are aware of their hiring and recruiting in the app to keep the user experience positive.
-
-                    According to research by Akamai, a second delay in load times can reduce conversions by up to 7 percent, making it essential for developers to build apps with optimized performance.
-                    In responsive applications, we ensure a very fast UI by default However, as an application grows, developers may experience some performance issues.
-
-                    In this guide, we will discuss five important ways to optimize the performance of responsive applications, including pre-optimization strategies.
-
+                <p>we can lazy loading. Use loacl component state. we should prevent unnecessary  re-renders. List virtualization in react give more advantage. we should virtual dom in react. we can create separate component that DOM can create more faster.
+                    We can focus in User interface and we can reduce loaidng time. Performence optimizing in a react application
+                    Optimizing application performance is important for developers who are aware of  keep the user experience positive. Standard code can improve Performence of website.
                 </p>
 
-                <h2 className='mt-20 text-secondary font-bold text-2xl'>How will you improve the performance of a React Application?</h2>
+                <h2 className='mt-20 text-secondary font-bold text-2xl'>What are the different ways to manage a state in a React application?</h2>
                 <p>Managing statuses in your React app is not as easy as using UsStat or UserReduser.
 
                     There are often dozens of ways to manage each type, not just many types of states. Which should you choose?
@@ -26,7 +21,7 @@ const Blog = () => {
                 <p>Four types of response conditions for management
                     When we talk about the state in our applications, it is important to be clear about what kind of state is really important.
 
-                    There are four main types of states in your feedback apps that you need to manage properly:</p>
+                    There are four main types of states:</p>
                 <p> 1.Local state</p>
                 <p> 2.Global state</p>
                 <p>  3.Server state</p>
@@ -49,7 +44,7 @@ const Blog = () => {
                 <img src={code} alt="" />
                 <h2 className='mt-20 text-secondary font-bold text-2xl'>  What is a unit test? Why should write unit tests? </h2>
 
-                <p>Test rooms are a way to test a room - the smallest number of numbers that can be separated in a system. In most programming languages, it is a function, a subroutine, a method or a tool. Separation of key points. In his book Working Well with the Law, author Michael Feathers says that these experiments are not experimental tests when based on the outside world:</p>
+                <p>Unit testing is software testing where individual components of software are tested. This test mainly use for validation of code Performence. It is done by developers. It may be individual method or object. </p>
                 <h2> Why should write unit tests?</h2>
                 <p>This is the main advantage of unit testing. When you add more features to a software, you may have to change the old design and code, and this can be costly and risky. Using the unit testing method can save a lot of time and make the whole process much faster and easier.</p>
             </article>
