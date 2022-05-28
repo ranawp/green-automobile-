@@ -10,7 +10,7 @@ const BusinessSummary = () => {
             <div className=' flex mt-3 mb-3 justify-center '>
 
                 <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-20 '>
-                    <div className='shadow-xl p-6'>
+                    <div className=' shadow-xl p-6'>
                         <h3 className='font-bold text-primary'>Over Products</h3>
                         <div className='font-bold text-secondary text-2xl'>
 

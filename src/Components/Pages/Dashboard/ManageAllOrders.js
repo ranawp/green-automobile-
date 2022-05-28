@@ -5,11 +5,13 @@ import auth from '../../../firebase.init';
 const ManageAllOrders = () => {
     const [bookings, setBookings] = useState([]);
     const [user] = useAuthState(auth)
+
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?user=${user.email}`)
+            fetch(`https://calm-coast-29564.herokuapp.com/bookings?user=${user.email}`)
                 .then(res => res.json())
                 .then(data => setBookings(data))
+
         }
     }, [user])
 
@@ -38,7 +40,7 @@ const ManageAllOrders = () => {
                                 <td>{booking.productName} </td>
                                 <td>{booking.price}</td>
                                 <td><select class="select select-bordered  max-w-xs">
-                                    <option disabled selected>Unpaid</option>
+                                    <option selected>Unpaid</option>
                                     <option>paid</option>
                                     <option>pending</option>
                                 </select></td>

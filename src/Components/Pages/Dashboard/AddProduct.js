@@ -28,7 +28,7 @@ const AddProduct = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://calm-coast-29564.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

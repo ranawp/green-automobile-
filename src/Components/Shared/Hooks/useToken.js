@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token, setToken] = useState('');
+    // console.log('token', token)
     useEffect(() => {
         const email = user?.user?.email;
         const currentuser = { email: email }
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://calm-coast-29564.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -16,7 +17,7 @@ const useToken = (user) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('data inside usetoken', data)
+                    // console.log('data inside usetoken', data)
 
                     const accessToken = data.token;
 

@@ -12,7 +12,7 @@ const HomeProductreview = () => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://calm-coast-29564.herokuapp.com/reviews', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accesToken')}`

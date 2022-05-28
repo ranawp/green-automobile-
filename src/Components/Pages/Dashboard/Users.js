@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Users = ({ user, index }) => {
+const Users = ({ user, index, reload, setReload }) => {
     // console.log(user.email)
     // const { email } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${user.email}`, {
+        fetch(`https://calm-coast-29564.herokuapp.com/users/admin/${user.email}`, {
             method: `PUT`,
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accesToken')}`
@@ -13,6 +13,7 @@ const Users = ({ user, index }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                reload(!setReload)
             })
     }
 

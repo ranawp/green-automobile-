@@ -17,6 +17,7 @@ import Login from './Components/Pages/Login/Login';
 import RequireAuth from './Components/Pages/Login/RequireAuth';
 import SignUp from './Components/Pages/Login/SignUp';
 import Purchase from './Components/Pages/Purchase/Purchase';
+import Footer from './Components/Shared/Footer';
 import Navbar from './Components/Shared/Navbar/Navbar';
 import NotFound from './Components/Shared/NotFound/NotFound';
 
@@ -60,6 +61,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
 
 
 

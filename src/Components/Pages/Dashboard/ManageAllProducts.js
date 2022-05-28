@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import useProduct from '../../Shared/Hooks/UseProduct';
@@ -6,11 +6,12 @@ import useProduct from '../../Shared/Hooks/UseProduct';
 const ManageAllProducts = () => {
     const [product, setProduct] = useProduct()
     const [user, loading, error] = useAuthState(auth);
+    const [reload, setReload] = useState(false)
 
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete?')
         if (confirm) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://calm-coast-29564.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -19,6 +20,7 @@ const ManageAllProducts = () => {
                     console.log(data)
                     const remaining = product.filter(product => product._id !== id);
                     setProduct(remaining)
+                    setReload(!reload)
 
                 })
         }

@@ -6,16 +6,13 @@ import auth from '../../../firebase.init';
 
 const Purchase = () => {
     const { purchaseId } = useParams();
+    console.log(purchaseId)
     const [product, setProduct] = useState({})
     const [user] = useAuthState(auth);
     // console.log(user)
 
-
-
-
-
     useEffect(() => {
-        const url = `http://localhost:5000/product/${purchaseId}`
+        const url = `https://calm-coast-29564.herokuapp.com/product/${purchaseId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -24,7 +21,7 @@ const Purchase = () => {
     // const { register, handleSubmit } = useForm();
     // const onSubmit = data => {
     //     console.log(data)
-    //     const url = `http://localhost:5000/bookings`
+    //     const url = `https://calm-coast-29564.herokuapp.com/bookings`
     //     fetch(url, {
     //         method: 'POST',
     //         headers: {
@@ -59,7 +56,7 @@ const Purchase = () => {
             img: product.img,
             price: product.price
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://calm-coast-29564.herokuapp.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -107,13 +104,13 @@ const Purchase = () => {
                         <form onSubmit={handleSubmit} action="">
 
                             <small>User Name:</small> <br />
-                            <input name='userName' disabled value={user.displayName} placeholder='name' type="text" class="input input-bordered w-full max-w-xs" /> <br />
+                            <input name='userName' readOnly value={user.displayName} placeholder='name' type="text" class="input input-bordered w-full max-w-xs" /> <br />
 
                             <small>Product Name:</small> <br />
-                            <input name='product' disabled value={product.name} placeholder='name' type="text" class="input input-bordered w-full max-w-xs" /> <br />
+                            <input name='product' readOnly value={product.name} placeholder='name' type="text" class="input input-bordered w-full max-w-xs" /> <br />
 
                             <small> Email:</small> <br />
-                            <input name='email' disabled value={user.email} type="email" placeholder="email" class="input input-bordered w-full max-w-xs" /><br />
+                            <input name='email' readOnly value={user.email} type="email" placeholder="email" class="input input-bordered w-full max-w-xs" /><br />
 
                             <small> Contact number:</small><br />
                             <input name='contact' type="number" placeholder="number" class="input input-bordered w-full max-w-xs" /><br />

@@ -6,16 +6,11 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accesToken')}`
-                },
-
-            })
+            // console.log(email)
+            fetch(`https://calm-coast-29564.herokuapp.com/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
+                    // console.log(data)
 
                     setAdmin(data.admin)
                     setAdminLoading(false)

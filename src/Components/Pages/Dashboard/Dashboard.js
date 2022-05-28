@@ -7,7 +7,8 @@ import useAdmin from '../../Shared/Hooks/useAdmin';
 const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
-    console.log(admin)
+    // console.log('admin', admin)
+    // console.log(user)
     return (
         <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -23,7 +24,7 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
 
                     {
-                        admin && <> <li><Link to="/dashboard/addproduct">Add New Product</Link></li>
+                        admin && <><li><Link to="/dashboard/addproduct">Add New Product</Link></li>
                             <li><Link to="/dashboard/alluser">All users</Link></li>
                             <li><Link to="/dashboard/manageAllproducts">Manage all Products</Link></li>
                             <li><Link to="/dashboard/manageAllOrders">Manage all Orders</Link></li></>
@@ -31,9 +32,11 @@ const Dashboard = () => {
 
 
 
-                    <li><Link to="/dashboard/addreview">Add Review</Link></li>
-                    <li><Link to="/dashboard/myorders">My Orders</Link></li>
                     <li><Link to="/dashboard/myprofile">My Profile</Link></li>
+
+                    {!admin && <>  <li><Link to="/dashboard/addreview">Add Review</Link></li>
+                        <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                    </>}
 
 
 

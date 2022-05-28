@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../Shared/Hooks/useToken';
+import useAdmin from '../../Shared/Hooks/useAdmin';
 
 
 const Login = () => {
@@ -25,14 +26,14 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
+    const [adminLoading] = useAdmin(gmailuser || googleuser)
     useEffect(() => {
         if (token) {
             navigate(from, { replace: true })
         }
-    }, [token, from, navigate]) //changed- m- 75-3//11:40 min
+    }, [token, from, navigate])
 
-    if (googleloading || gmailloading) {
+    if (googleloading || gmailloading || adminLoading) {
         return <Loading></Loading>
     }
 
@@ -41,16 +42,10 @@ const Login = () => {
     }
 
 
-
-
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
         // console.log(data.email, data.password)
     };
-
-
-
-
     return (
         <div className='flex mt-3 mb-3 justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">

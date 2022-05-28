@@ -29,7 +29,7 @@ const AddReview = () => {
                     }
 
                     //send to database 
-                    fetch('http://localhost:5000/reviews', {
+                    fetch('https://calm-coast-29564.herokuapp.com/reviews', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -74,7 +74,7 @@ const AddReview = () => {
     //     //                 massage: massage,
     //     //                 img: img
     //     //             }
-    //     //             fetch('http://localhost:5000/reviews', {
+    //     //             fetch('https://calm-coast-29564.herokuapp.com/reviews', {
     //     //                 method: 'POST',
     //     //                 headers: {
     //     //                     'content-type': 'application/json'
@@ -104,7 +104,7 @@ const AddReview = () => {
     //         rattings: rattings,
     //         massage: massage
     //     }
-    //     fetch('http://localhost:5000/reviews', {
+    //     fetch('https://calm-coast-29564.herokuapp.com/reviews', {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json'

@@ -5,12 +5,13 @@ import Users from './Users';
 
 const AllUsers = () => {
     const [singleUser, setSingleUser] = useState([]);
+    const [reload, setReload] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://calm-coast-29564.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setSingleUser(data))
-    }, [])
+    }, [singleUser])
 
 
     return (
@@ -35,6 +36,8 @@ const AllUsers = () => {
                                 key={singleUser._id}
                                 user={singleUser}
                                 index={index}
+                                reload={reload}
+                                setReload={setReload}
                             ></Users>)
                         }
                     </tbody>

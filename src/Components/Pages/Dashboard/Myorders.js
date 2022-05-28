@@ -1,28 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Myorders = () => {
     const [bookings, setBookings] = useState([]);
     const [user] = useAuthState(auth)
+    // const { user } = useParams()
+    // console.log(user)
+
     // console.log(user)
     useEffect(() => {
         if (user) {
-
-            fetch(`http://localhost:5000/bookings?email=${user.email}`, {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accesToken')}`
-                }
-            }, [user])
-                .then(res => {
-                    // console.log('res', res);
-                    return res.json()
-                })
-                .then(data => {
-
-                    setBookings(data)
-                })
+            fetch(`https://calm-coast-29564.herokuapp.com/bookings/${user.email}`)
+                .then(res => res.json())
+                .then(data => setBookings(data))
         }
     }, [user])
     return (
@@ -51,12 +43,7 @@ const Myorders = () => {
                                 <td>{booking.price}</td>
                                 <td><input type="submit" value='Cancel' className='text-white btn btn-active btn-primary w-full max-w-xs' /></td>
                             </tr>)
-
                         }
-
-
-
-
                     </tbody>
                 </table>
             </div>
