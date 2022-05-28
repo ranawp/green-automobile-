@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-* Live website link: https://calm-coast-29564.herokuapp.com/
+* Live website link: https://assignment-12-dbe1a.web.app/
 * project name: Auto motive
 * server side code link: https://github.com/programming-hero-web-course1/manufacturer-website-server-side-ranawp
 
