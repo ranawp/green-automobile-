@@ -8,7 +8,7 @@ const Product = () => {
         fetch('https://calm-coast-29564.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProduct(data))
-    })
+    }, [products])
 
     return (
         <div className='mt-10' id='products'>
